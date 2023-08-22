@@ -4,4 +4,143 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 0;
+  outline: 0;
 }
+
+#todoApp {
+  min-width: 400px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 15px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+img {
+  height: 15px;
+  width: 15px;
+}
+
+#taskInput {
+  width: 100%;
+  display: flex;
+  background-color: rgb(243, 243, 243);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 5px 15px;
+  align-items: center;
+}
+#taskInput #img1 {
+  width: 20px;
+  height: 20px;
+}
+#taskInput input {
+  width: 95%;
+  background-color: transparent;
+  padding: 10px;
+  font-size: 20px;
+  color: gray;
+}
+#taskInput #addTask {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  height: 25px;
+  width: 27px;
+  border-radius: 50%;
+  border: 1px solid;
+  box-shadow: 1px 1px 10px 1px white;
+  transition: all 0.2s;
+}
+#taskInput #addTask:hover {
+  background-color: white;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#feature1,
+#feature2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: gray;
+}
+
+#feature1 {
+  border-bottom: 1px solid rgb(182, 182, 182);
+  padding: 7px 0;
+  margin-bottom: 20px;
+  align-items: center;
+}
+#feature1 #img3 {
+  height: 7px;
+  width: 7px;
+}
+
+#feature2 {
+  border-top: 1px solid rgb(182, 182, 182);
+  padding: 7px 0;
+  margin-top: 20px;
+  align-items: center;
+}
+#feature2 #right {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+}
+#feature2 #right span {
+  display: inline-flex;
+  padding: 3px, 60px;
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.btn:hover {
+  background-color: rgb(244, 244, 244);
+  cursor: pointer;
+}
+
+#taskList {
+  list-style-type: none;
+}
+#taskList li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 15px 0;
+  padding-right: 5px;
+}
+#taskList li #img4,
+#taskList li #img5 {
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#taskList li #img4:hover,
+#taskList li #img5:hover {
+  background-color: white;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+#taskList li #img4 {
+  margin-right: 5px;
+}
+#taskList li #img5 {
+  margin-left: auto;
+}
+#taskList li span {
+  display: inline-flex;
+  word-wrap: break-word;
+  font-size: 20px;
+}/*# sourceMappingURL=style.css.map */
