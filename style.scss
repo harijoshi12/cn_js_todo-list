@@ -1,3 +1,4 @@
+/* Resetting margin, padding, border, and outline for all elements */
 *,
 *::after,
 *::before {
@@ -7,6 +8,8 @@
   border: 0;
   outline: 0;
 }
+
+/* Main container for the todo app */
 #todoApp {
   min-width: 400px;
   width: 50%;
@@ -19,10 +22,14 @@
   border: 1px solid gray;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+/* Styling for all images */
 img {
   height: 15px;
   width: 15px;
 }
+
+/* Styling for the todo form */
 #todoForm {
   width: 100%;
   display: flex;
@@ -31,10 +38,12 @@ img {
   overflow: hidden;
   padding: 5px 15px;
   align-items: center;
+  /* Specific styling for the first image inside the form */
   #img1 {
     width: 20px;
     height: 20px;
   }
+  /* Styling for the input field */
   input {
     width: 95%;
     background-color: transparent;
@@ -42,6 +51,7 @@ img {
     font-size: 20px;
     color: gray;
   }
+  /* Styling for the "Add Task" button */
   #addTask {
     width: 5%;
     display: flex;
@@ -50,11 +60,11 @@ img {
     padding: 3px;
     height: 25px;
     width: 27px;
-    // background-color: red;
     border-radius: 50%;
     border: 1px solid;
     box-shadow: 1px 1px 10px 1px white;
     transition: all 0.2s;
+    /* Hover effect for the "Add Task" button */
     &:hover {
       background-color: white;
       cursor: pointer;
@@ -62,6 +72,7 @@ img {
     }
   }
 }
+/* Styling for the feature sections */
 #feature1,
 #feature2 {
   display: flex;
@@ -69,22 +80,26 @@ img {
   font-size: 13px;
   color: gray;
 }
+/* Styling for the first feature section */
 #feature1 {
   border-bottom: 1px solid rgb(182, 182, 182);
   padding: 7px 0;
   margin-bottom: 20px;
   align-items: center;
+  /* Specific styling for the double tick image */
   #img3 {
     height: 7px;
     width: 7px;
   }
 }
+/* Styling for the second feature section */
 #feature2 {
   border-top: 1px solid rgb(182, 182, 182);
   padding: 7px 0;
   padding-left: 10px;
   margin-top: 20px;
   align-items: center;
+  /* Specific styling for the right part of the feature */
   #right {
     display: flex;
     justify-content: space-evenly;
@@ -93,12 +108,14 @@ img {
       background-color: rgb(217, 217, 217);
       color: black;
     }
+    /* Styling for the span inside the right part */
     span {
       display: inline-flex;
       padding: 3px, 60px;
     }
   }
 }
+/* General button styling */
 .btn {
   border-radius: 10px;
   padding: 5px 10px;
@@ -107,15 +124,18 @@ img {
     cursor: pointer;
   }
 }
+/* Styling for the task list */
 #taskList {
   list-style-type: none;
   li.checked {
     text-decoration: line-through;
     background-color: rgb(198, 252, 198);
+    /* Hover effect for completed tasks */
     &:hover {
       background-color: rgb(155, 255, 155);
     }
   }
+  /* General styling for list items */
   li {
     display: flex;
     justify-content: flex-start;
@@ -129,14 +149,12 @@ img {
     }
     .task-delete,
     .task-checkbox {
-      // background-color: red;
       padding: 5px;
       height: 30px;
       width: 30px;
       cursor: pointer;
       transition: all 0.2s;
       &:hover {
-        // background-color: white;
         cursor: pointer;
         transform: scale(1.2);
       }

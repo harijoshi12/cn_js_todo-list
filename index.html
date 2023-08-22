@@ -1,37 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta information -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Title of the web page -->
     <title>Todo List</title>
   </head>
   <body>
+    <!-- Main todo application container -->
     <div id="todoApp">
+      <!-- Form to input new tasks -->
       <form action="" id="todoForm">
+        <!-- Icon for the todo list -->
         <img id="img1" src="./images/clipboard-list-solid.svg" alt="" />
+
+        <!-- Input field for typing the task -->
         <input id="taskInput" type="text" placeholder="Type your todo list" />
+
+        <!-- Icon to add a new task -->
         <img id="addTask" src="./images/plus-solid.svg" alt="" />
       </form>
+
+      <!-- Feature section 1: Complete and clear tasks -->
       <div id="feature1">
+        <!-- Button to mark all tasks as complete -->
         <span class="btn" id="completeAllTasks">
           <img id="img3" src="./images/check-double-solid.svg" alt="" />
           complete all tasks
         </span>
+
+        <!-- Button to clear completed tasks -->
         <span class="btn" id="clearCompleted">clear completed</span>
       </div>
+
+      <!-- List of tasks -->
       <ul id="taskList"></ul>
+
+      <!-- Feature section 2: Display task counts and filters -->
       <div id="feature2">
+        <!-- Display the number of tasks left -->
         <div id="left">
           <p><span id="totalTask">0</span> tasks left</p>
         </div>
+
+        <!-- Task filter options -->
         <div id="right">
+          <!-- Button to show all tasks -->
           <span class="btn active" id="showAll">All</span>
+
+          <!-- Button to show uncompleted tasks -->
           <span class="btn" id="showUncompleted">Uncompleted</span>
+
+          <!-- Button to show completed tasks -->
           <span class="btn" id="showCompleted">Completed</span>
         </div>
       </div>
     </div>
+
+    <!-- Script to handle dynamic behavior -->
     <script src="main.js"></script>
   </body>
 </html>

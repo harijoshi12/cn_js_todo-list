@@ -1,10 +1,15 @@
+// Function to update the total number of uncompleted tasks
 const updateTotalTasks = () => {
   let tasksLeft = document.querySelectorAll(
     '#taskList li:not(.checked)'
   ).length;
   document.getElementById('totalTask').textContent = tasksLeft;
 };
+
+// Current filter type (all, uncompleted, completed)
 let currentFilter = 'all';
+
+// Function to filter tasks based on the selected filter type
 const filterTasks = (filterType) => {
   currentFilter = filterType;
   var taskList = document.getElementById('taskList');
@@ -13,6 +18,7 @@ const filterTasks = (filterType) => {
     var task = tasks[i];
     var isCompleted = task.classList.contains('checked');
 
+    // Apply the filter based on the filter type
     switch (filterType) {
       case 'all':
         task.style.display = '';
@@ -26,6 +32,8 @@ const filterTasks = (filterType) => {
     }
   }
 };
+
+// Function to set the active filter button
 const setActiveButton = (buttonId) => {
   var buttons = ['showAll', 'showUncompleted', 'showCompleted'];
   buttons.forEach((id) => {
@@ -34,16 +42,17 @@ const setActiveButton = (buttonId) => {
   document.getElementById(buttonId).classList.add('active');
 };
 
+// Function to add a new task to the task list
 const addTask = (taskValue) => {
   let taskList = document.getElementById('taskList');
-  // create list item
   let listItem = document.createElement('li');
 
-  // Create the first <img> element
-  var img1 = document.createElement('img');
+  // Create the checkbox image element
+  let img1 = document.createElement('img');
   img1.className = 'task-checkbox';
   img1.src = './images/circle-regular.svg';
   img1.alt = '';
+  // Add event listener to toggle task completion
   img1.addEventListener('click', () => {
     if (img1.src.endsWith('circle-regular.svg')) {
       img1.src = './images/circle-check-regular.svg';
@@ -56,12 +65,12 @@ const addTask = (taskValue) => {
     updateTotalTasks();
   });
 
-  // Create the <span> element
-  var span = document.createElement('span');
+  // Create the task text element
+  let span = document.createElement('span');
   span.textContent = taskValue;
 
-  // Create the second <img> element
-  var img2 = document.createElement('img');
+  // Create the delete button image element
+  let img2 = document.createElement('img');
   img2.className = 'task-delete';
   img2.src = './images/circle-xmark-regular.svg';
   img2.alt = '';
@@ -80,6 +89,7 @@ const addTask = (taskValue) => {
   updateTotalTasks();
 };
 
+// Event listeners for adding tasks and filtering
 document.getElementById('addTask').addEventListener('click', () => {
   let taskInput = document.getElementById('taskInput');
   if (taskInput.value) {
@@ -118,6 +128,7 @@ document.getElementById('showCompleted').addEventListener('click', function () {
 filterTasks('all'); // Set the default filter to 'all'
 setActiveButton('showAll'); // Set the "All" button as active by default
 
+// Function to mark all tasks as completed
 const completeAllTasks = () => {
   var taskList = document.getElementById('taskList');
   var tasks = taskList.getElementsByTagName('li');
@@ -133,6 +144,8 @@ const completeAllTasks = () => {
   filterTasks(currentFilter);
   updateTotalTasks();
 };
+
+// Function to clear all completed tasks
 const clearCompletedTasks = () => {
   var taskList = document.getElementById('taskList');
   var tasks = taskList.getElementsByTagName('li');
@@ -148,6 +161,8 @@ const clearCompletedTasks = () => {
   // Update the total number of tasks
   updateTotalTasks();
 };
+
+// Event listeners for completing all tasks and clearing completed tasks
 document
   .getElementById('completeAllTasks')
   .addEventListener('click', function () {

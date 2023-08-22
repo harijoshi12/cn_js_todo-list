@@ -1,3 +1,4 @@
+/* Resetting margin, padding, border, and outline for all elements */
 *,
 *::after,
 *::before {
@@ -8,6 +9,7 @@
   outline: 0;
 }
 
+/* Main container for the todo app */
 #todoApp {
   min-width: 400px;
   width: 50%;
@@ -21,11 +23,13 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+/* Styling for all images */
 img {
   height: 15px;
   width: 15px;
 }
 
+/* Styling for the todo form */
 #todoForm {
   width: 100%;
   display: flex;
@@ -34,6 +38,9 @@ img {
   overflow: hidden;
   padding: 5px 15px;
   align-items: center;
+  /* Specific styling for the first image inside the form */
+  /* Styling for the input field */
+  /* Styling for the "Add Task" button */
 }
 #todoForm #img1 {
   width: 20px;
@@ -58,6 +65,7 @@ img {
   border: 1px solid;
   box-shadow: 1px 1px 10px 1px white;
   transition: all 0.2s;
+  /* Hover effect for the "Add Task" button */
 }
 #todoForm #addTask:hover {
   background-color: white;
@@ -65,6 +73,7 @@ img {
   transform: scale(1.2);
 }
 
+/* Styling for the feature sections */
 #feature1,
 #feature2 {
   display: flex;
@@ -73,28 +82,33 @@ img {
   color: gray;
 }
 
+/* Styling for the first feature section */
 #feature1 {
   border-bottom: 1px solid rgb(182, 182, 182);
   padding: 7px 0;
   margin-bottom: 20px;
   align-items: center;
+  /* Specific styling for the double tick image */
 }
 #feature1 #img3 {
   height: 7px;
   width: 7px;
 }
 
+/* Styling for the second feature section */
 #feature2 {
   border-top: 1px solid rgb(182, 182, 182);
   padding: 7px 0;
   padding-left: 10px;
   margin-top: 20px;
   align-items: center;
+  /* Specific styling for the right part of the feature */
 }
 #feature2 #right {
   display: flex;
   justify-content: space-evenly;
   width: 60%;
+  /* Styling for the span inside the right part */
 }
 #feature2 #right .active {
   background-color: rgb(217, 217, 217);
@@ -105,6 +119,7 @@ img {
   padding: 3px, 60px;
 }
 
+/* General button styling */
 .btn {
   border-radius: 10px;
   padding: 5px 10px;
@@ -114,12 +129,15 @@ img {
   cursor: pointer;
 }
 
+/* Styling for the task list */
 #taskList {
   list-style-type: none;
+  /* General styling for list items */
 }
 #taskList li.checked {
   text-decoration: line-through;
   background-color: rgb(198, 252, 198);
+  /* Hover effect for completed tasks */
 }
 #taskList li.checked:hover {
   background-color: rgb(155, 255, 155);
