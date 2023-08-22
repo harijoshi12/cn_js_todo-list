@@ -136,23 +136,23 @@ img {
 #taskList li:hover {
   background-color: rgb(230, 230, 230);
 }
-#taskList li #img4,
-#taskList li #img5 {
+#taskList li .task-delete,
+#taskList li .task-checkbox {
   padding: 5px;
   height: 30px;
   width: 30px;
   cursor: pointer;
   transition: all 0.2s;
 }
-#taskList li #img4:hover,
-#taskList li #img5:hover {
+#taskList li .task-delete:hover,
+#taskList li .task-checkbox:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
-#taskList li #img4 {
+#taskList li .task-checkbox {
   margin-right: 5px;
 }
-#taskList li #img5 {
+#taskList li .task-delete {
   margin-left: auto;
 }
 #taskList li span {

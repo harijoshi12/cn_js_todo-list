@@ -127,8 +127,8 @@ img {
     &:hover {
       background-color: rgb(230, 230, 230);
     }
-    #img4,
-    #img5 {
+    .task-delete,
+    .task-checkbox {
       // background-color: red;
       padding: 5px;
       height: 30px;
@@ -141,10 +141,10 @@ img {
         transform: scale(1.2);
       }
     }
-    #img4 {
+    .task-checkbox {
       margin-right: 5px;
     }
-    #img5 {
+    .task-delete {
       margin-left: auto;
     }
     span {

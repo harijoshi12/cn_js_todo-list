@@ -1,12 +1,7 @@
 const updateTotalTasks = () => {
-  let taskList = document.getElementById('taskList');
-  let tasks = taskList.getElementsByTagName('li');
-  let tasksLeft = 0;
-  for (let i = 0; i < tasks.length; i++) {
-    if (!tasks[i].classList.contains('checked')) {
-      tasksLeft++;
-    }
-  }
+  let tasksLeft = document.querySelectorAll(
+    '#taskList li:not(.checked)'
+  ).length;
   document.getElementById('totalTask').textContent = tasksLeft;
 };
 let currentFilter = 'all';
@@ -46,7 +41,7 @@ const addTask = (taskValue) => {
 
   // Create the first <img> element
   var img1 = document.createElement('img');
-  img1.id = 'img4';
+  img1.className = 'task-checkbox';
   img1.src = './images/circle-regular.svg';
   img1.alt = '';
   img1.addEventListener('click', () => {
@@ -67,7 +62,7 @@ const addTask = (taskValue) => {
 
   // Create the second <img> element
   var img2 = document.createElement('img');
-  img2.id = 'img5';
+  img2.className = 'task-delete';
   img2.src = './images/circle-xmark-regular.svg';
   img2.alt = '';
   img2.addEventListener('click', () => {
@@ -91,6 +86,7 @@ document.getElementById('addTask').addEventListener('click', () => {
     addTask(taskInput.value);
     taskInput.value = '';
   }
+  filterTasks(currentFilter);
 });
 document.getElementById('todoForm').addEventListener('submit', (e) => {
   e.preventDefault(); // Prevent the default form submission behavior
@@ -99,6 +95,7 @@ document.getElementById('todoForm').addEventListener('submit', (e) => {
     addTask(taskInput.value);
     taskInput.value = '';
   }
+  filterTasks(currentFilter);
 });
 
 document.getElementById('showAll').addEventListener('click', function () {
@@ -127,13 +124,14 @@ const completeAllTasks = () => {
 
   for (var i = 0; i < tasks.length; i++) {
     var task = tasks[i];
-    var checkboxImg = task.querySelector('#img4');
+    var checkboxImg = task.querySelector('.task-checkbox');
     checkboxImg.src = './images/circle-check-regular.svg'; // Checked image
     task.classList.add('checked');
   }
 
   // Reapply the current filter to update the display
   filterTasks(currentFilter);
+  updateTotalTasks();
 };
 const clearCompletedTasks = () => {
   var taskList = document.getElementById('taskList');
