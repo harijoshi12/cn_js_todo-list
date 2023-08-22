@@ -96,6 +96,10 @@ img {
   justify-content: space-evenly;
   width: 60%;
 }
+#feature2 #right .active {
+  background-color: rgb(217, 217, 217);
+  color: black;
+}
 #feature2 #right span {
   display: inline-flex;
   padding: 3px, 60px;

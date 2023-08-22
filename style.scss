@@ -89,6 +89,10 @@ img {
     display: flex;
     justify-content: space-evenly;
     width: 60%;
+    .active {
+      background-color: rgb(217, 217, 217);
+      color: black;
+    }
     span {
       display: inline-flex;
       padding: 3px, 60px;

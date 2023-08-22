@@ -14,28 +14,21 @@
         <img id="addTask" src="./images/plus-solid.svg" alt="" />
       </form>
       <div id="feature1">
-        <span class="btn"
-          ><img id="img3" src="./images/check-double-solid.svg" alt="" />
-          complete all tasks</span
-        >
-        <span class="btn">clear completed</span>
+        <span class="btn" id="completeAllTasks">
+          <img id="img3" src="./images/check-double-solid.svg" alt="" />
+          complete all tasks
+        </span>
+        <span class="btn" id="clearCompleted">clear completed</span>
       </div>
-      <ul id="taskList">
-        <!-- <li>
-          <img id="img4" src="./images/circle-regular.svg" alt="" /><span
-            >kkkklsjfksdjfklsdjf lkjj sjfdlk sdjkflj</span
-          >
-          <img id="img5" src="./images/circle-xmark-regular.svg" alt="" />
-        </li> -->
-      </ul>
+      <ul id="taskList"></ul>
       <div id="feature2">
         <div id="left">
           <p><span id="totalTask">0</span> tasks left</p>
         </div>
         <div id="right">
-          <span class="btn">All</span>
-          <span class="btn">Uncompleted</span>
-          <span class="btn">Completed</span>
+          <span class="btn active" id="showAll">All</span>
+          <span class="btn" id="showUncompleted">Uncompleted</span>
+          <span class="btn" id="showCompleted">Completed</span>
         </div>
       </div>
     </div>

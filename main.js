@@ -9,6 +9,36 @@ const updateTotalTasks = () => {
   }
   document.getElementById('totalTask').textContent = tasksLeft;
 };
+let currentFilter = 'all';
+const filterTasks = (filterType) => {
+  currentFilter = filterType;
+  var taskList = document.getElementById('taskList');
+  var tasks = taskList.getElementsByTagName('li');
+  for (var i = 0; i < tasks.length; i++) {
+    var task = tasks[i];
+    var isCompleted = task.classList.contains('checked');
+
+    switch (filterType) {
+      case 'all':
+        task.style.display = '';
+        break;
+      case 'uncompleted':
+        task.style.display = isCompleted ? 'none' : '';
+        break;
+      case 'completed':
+        task.style.display = isCompleted ? '' : 'none';
+        break;
+    }
+  }
+};
+const setActiveButton = (buttonId) => {
+  var buttons = ['showAll', 'showUncompleted', 'showCompleted'];
+  buttons.forEach((id) => {
+    document.getElementById(id).classList.remove('active');
+  });
+  document.getElementById(buttonId).classList.add('active');
+};
+
 const addTask = (taskValue) => {
   let taskList = document.getElementById('taskList');
   // create list item
@@ -27,6 +57,7 @@ const addTask = (taskValue) => {
       img1.src = './images/circle-regular.svg';
       listItem.classList.remove('checked');
     }
+    filterTasks(currentFilter);
     updateTotalTasks();
   });
 
@@ -69,3 +100,64 @@ document.getElementById('todoForm').addEventListener('submit', (e) => {
     taskInput.value = '';
   }
 });
+
+document.getElementById('showAll').addEventListener('click', function () {
+  setActiveButton('showAll');
+  filterTasks('all');
+});
+
+document
+  .getElementById('showUncompleted')
+  .addEventListener('click', function () {
+    setActiveButton('showUncompleted');
+    filterTasks('uncompleted');
+  });
+
+document.getElementById('showCompleted').addEventListener('click', function () {
+  setActiveButton('showCompleted');
+  filterTasks('completed');
+});
+
+filterTasks('all'); // Set the default filter to 'all'
+setActiveButton('showAll'); // Set the "All" button as active by default
+
+const completeAllTasks = () => {
+  var taskList = document.getElementById('taskList');
+  var tasks = taskList.getElementsByTagName('li');
+
+  for (var i = 0; i < tasks.length; i++) {
+    var task = tasks[i];
+    var checkboxImg = task.querySelector('#img4');
+    checkboxImg.src = './images/circle-check-regular.svg'; // Checked image
+    task.classList.add('checked');
+  }
+
+  // Reapply the current filter to update the display
+  filterTasks(currentFilter);
+};
+const clearCompletedTasks = () => {
+  var taskList = document.getElementById('taskList');
+  var tasks = taskList.getElementsByTagName('li');
+
+  // Loop through the tasks in reverse to avoid issues while removing elements
+  for (var i = tasks.length - 1; i >= 0; i--) {
+    var task = tasks[i];
+    if (task.classList.contains('checked')) {
+      taskList.removeChild(task);
+    }
+  }
+
+  // Update the total number of tasks
+  updateTotalTasks();
+};
+document
+  .getElementById('completeAllTasks')
+  .addEventListener('click', function () {
+    completeAllTasks();
+  });
+
+document
+  .getElementById('clearCompleted')
+  .addEventListener('click', function () {
+    clearCompletedTasks();
+  });
