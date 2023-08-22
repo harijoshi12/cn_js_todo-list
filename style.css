@@ -26,7 +26,7 @@ img {
   width: 15px;
 }
 
-#taskInput {
+#todoForm {
   width: 100%;
   display: flex;
   background-color: rgb(243, 243, 243);
@@ -35,18 +35,18 @@ img {
   padding: 5px 15px;
   align-items: center;
 }
-#taskInput #img1 {
+#todoForm #img1 {
   width: 20px;
   height: 20px;
 }
-#taskInput input {
+#todoForm input {
   width: 95%;
   background-color: transparent;
   padding: 10px;
   font-size: 20px;
   color: gray;
 }
-#taskInput #addTask {
+#todoForm #addTask {
   width: 5%;
   display: flex;
   justify-content: center;
@@ -59,7 +59,7 @@ img {
   box-shadow: 1px 1px 10px 1px white;
   transition: all 0.2s;
 }
-#taskInput #addTask:hover {
+#todoForm #addTask:hover {
   background-color: white;
   cursor: pointer;
   transform: scale(1.2);
@@ -87,6 +87,7 @@ img {
 #feature2 {
   border-top: 1px solid rgb(182, 182, 182);
   padding: 7px 0;
+  padding-left: 10px;
   margin-top: 20px;
   align-items: center;
 }
@@ -112,12 +113,24 @@ img {
 #taskList {
   list-style-type: none;
 }
+#taskList li.checked {
+  text-decoration: line-through;
+  background-color: rgb(198, 252, 198);
+}
+#taskList li.checked:hover {
+  background-color: rgb(155, 255, 155);
+}
 #taskList li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 15px 0;
+  margin: 10px 0;
+  padding: 5px;
   padding-right: 5px;
+  border-radius: 20px;
+}
+#taskList li:hover {
+  background-color: rgb(230, 230, 230);
 }
 #taskList li #img4,
 #taskList li #img5 {
@@ -129,7 +142,6 @@ img {
 }
 #taskList li #img4:hover,
 #taskList li #img5:hover {
-  background-color: white;
   cursor: pointer;
   transform: scale(1.2);
 }
